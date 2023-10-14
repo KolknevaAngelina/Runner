@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
     public float laneChangeSpeed = 15;
     public float jumpPower = 15;
     public float jumpGravity = -40;
-    float laneOffset = 2.5f;
+    float laneOffset;
     float realGravity = -9.8f;
     float pointStart;
     float pointFinish;
@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
 
     // Start is called before the first frame update
     void Start() {
+        laneOffset = MapGenerator.instance.laneOffset;
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
         startGamePosition = transform.position;
